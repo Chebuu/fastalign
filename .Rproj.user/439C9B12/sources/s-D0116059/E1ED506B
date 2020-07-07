@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1594114897829.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E1ED506B",
+    "lastKnownWriteTime" : 1594114920,
+    "last_content_update" : 1594114920606,
+    "path" : "~/Desktop/PRJ/SATIV.AI/software/fastalign/vignettes/Pairwise-Alignments.Rmd",
+    "project_path" : "vignettes/Pairwise-Alignments.Rmd",
+    "properties" : {
+        "cursorPosition" : "32,0",
+        "last_setup_crc32" : "F45FBF13f78a2687",
+        "scrollLine" : "10"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

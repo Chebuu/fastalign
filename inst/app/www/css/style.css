@@ -1,0 +1,51 @@
+/* For each flowLayout under the Options tab */
+.options-flow {
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Position components that define a submat */
+.submat-define-child {
+  margin: 10px;
+  width: 120%;
+}
+
+/* Align the checkbox container */
+#options-flow-1>div:nth-child(2){
+  margin-top: 20px;
+}
+
+/* Make tab pane inherit 100% width */
+#options-flow-3>div:nth-child(1){
+  width: 100%;
+}
+
+/* Scale checkboxes */
+#check\.scores, 
+#check\.substitution_matrix\.base_only {
+  transform : scale(1.2);
+}
+
+/* Force inline button container */
+#button\.save {
+  display: inline;
+  margin-left: 60px;
+}
+
+/* Shade sub-components in define sub matrix */
+.shade-gray {
+  background-color: #DDDDDD;
+}
+
+/* Make action button a pseudo submit button */
+.submit-color {
+  color: white;
+  background-color: #337AB7;
+}
+
+.submit-color:hover {
+  color: white;
+  background-color: #2E6DA4;
+}
