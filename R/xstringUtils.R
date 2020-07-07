@@ -1,5 +1,12 @@
 library(Biostrings)
+library(sangerseqR)
 library(tools)
+
+XSTRING_ALPHAS <- c(
+  DNA_ALPHABET = Biostrings::DNAStringSet,
+  RNA_ALPHABET = Biostrings::RNAStringSet,
+  AA_ALPHABET  = Biostrings::AAStringSet
+)
 
 deep.in <- function(x, y, test=all){
   return(
@@ -16,6 +23,22 @@ all.in <- function(x,y){
 any.in <- function(x,y){
   return(
     deep.in(x,y,any)
+  )
+}
+
+find.nonsense <- function(dnastring, genetic.code=CANSAT_GENETIC_CODE){
+  AA.seqs.split <- strsplit(
+    as.character(
+      translate(
+        dnastring,
+        genetic.code = genetic.code)
+    ),
+    split = ''
+  )
+  return(
+    sapply(AA.seqs.split, function(AA.seq){
+      which(AA.seq == '*')
+    })
   )
 }
 
@@ -102,6 +125,14 @@ which.alphabet <- function(xstringset) {
 }
 
 isOf <- function(class1, class2) {
+  #' A vectoized version of \code{methods::extends}.
+  #' @description
+  #' Check if any TRUE for i: (class1, class2[i])}
+  #' @param class1 An R object
+  #' @param class2 A list of strings naming classes against which class1 will be tested for \code{methods::extends}-tion.
+  #' @return
+  #' A list of logicals indicating whether the \code{class2} item at a given index extends \code{class1}.
+  #' @export
   any(sapply(as.list(class2), function(x) {
     extends(class(class1), x)
   }))
@@ -118,57 +149,5 @@ checkAndParseXStringSet <- function(xstringset){
     xstringset <- do.call(classes[which.alphabet(bstringset)], as.list(bstringset))
   }
   return(xstringset)
-}
-
-is.fasta <- function(fpath){
-
-}
-
-is.fastq <- function(fpath){
-
-}
-
-which.format <- function(fpath) {
-
-}
-
-has.header <- function(fpath){
-  fCon <- file(fpath, 'r')
-  header <- readLines(fCon, n=1, skipNul=T); close(fCon)
-  header.sub <- substr(trimws(header), 1, 1)
-  return(
-    header.sub == '>' | header.sub == '@'
-  )
-}
-
-get.headers <- function(fpath){
-  fCon <- file(fpath, 'r')
-  lines <- readLines(fcon); close(fcon)
-  return(
-    sapply(1:length(lines), function(line.number){
-      line <- lines[idx]
-      line.trim <- trimws()
-      return(
-        ifelse(
-          any(startsWith(line.trim, c('>', '@'))),
-          line,
-          NULL
-        )
-      )
-    })
-  )
-}
-
-add.header <- function(fpath, header=NULL, force=F) {
-  status <- F
-  proceed <- !has.header(fpath) | force
-  if(any(startsWith(header, c('>', '@')))) header <- substring(header, 2, length(header))
-  if(proceed){
-    write(header, fpath, append=FALSE)
-    status <- T
-  }else{
-    warning(sprintf('File at fpath already contains a header beginning with ">" or "@".\n\t%s\nSet argument force=FALSE to force the addition of a header.\n', fpath))
-  }
-  return(status)
 }
 

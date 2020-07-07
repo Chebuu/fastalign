@@ -19,7 +19,7 @@ reverseTranslate <- function(aastring, sample=FALSE, codon.freqs=DEFAULT_PROBS, 
 tripletPermutations <- function(triplets, probs=NULL) {
   permutations <- list()
   for(i in 1:length(triplets)) {
-
+    stop('TODO')
   }
   return(XStringSetList(permutations))
 }

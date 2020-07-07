@@ -7,3 +7,23 @@ multiPairwise <- function(pattern, subject, ...){
   return(alignment)
 }
 
+
+parseMultiPairwise <- function(alignment) {
+  stop('TODO')
+  # lapply(alignment, function(a){
+  #   writePairwiseAlignments(a)
+  # })
+  #     summary(alignment)
+  #     pid(alignment)
+  #     mismatchTable(alignment)
+  #     mmismatchSummary(alignment)
+  #     nindel(alignment)
+  #     indel(alignment)
+  #     alignedPattern(alignment)
+  #     alignedSubject(alignment)
+}
+
+treeMultiPaiwis <- function(alignment) {
+
+}
+

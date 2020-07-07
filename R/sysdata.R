@@ -1,4 +1,6 @@
-#' Cannabis sativa codons and codon usage table
+#' @name CANSAT_CODONS_DNA
+#' @title Dataset: \code{CANSAT_CODONS}
+#' @description Cannabis sativa codons and codon usage table
 #' @format A list
 #' \describe{
 #'   \item{TABLE}{DNA/RNA triplets and their translations}
@@ -73,8 +75,9 @@ CANSAT_CODONS <- list(
   )
 )
 
-
-#' Cannabis sativa genetic code formatted to match that of \code{Biostrings::GENETIC_CODE}
+#' @name CANSAT_GENETIC_CODE
+#' @title Dataset: \code{CANSAT_GENETIC_CODE}
+#' @description Cannabis sativa genetic code formatted to match that of \code{Biostrings::GENETIC_CODE}
 #' @format A list
 #' @source
 #'\code{fastalign::CANSAT_CODONS$TABLE$DNA}
@@ -94,9 +97,102 @@ for(i in 1:length(GENETIC_CODE)) {
 }
 names(CANSAT_GENETIC_CODE) <- CANSAT_GENETIC_CODE_NAMES
 
-#' THCA Synthase annotations
+#' @name
+#' @title Dataset: \code{}
+#' @description
 #' @format A list
 #' @source
-#'\code{fastalign::CANSAT_CODONS$TABLE$DNA}
-IRanges()
-IRangesList()
+#'\url{https://pfam.xfam.org/structure/3vte#tabview=tab0}
+ANNOTATIONS_Q8GTB6 <- list(
+  'Sites' = list(
+    'FAD-binding' = list(
+      desciption = 'FAD-binding sites',
+      ranges = IRangesList(
+        'H292' = IRanges(292),
+        'C417' = IRanges(417),
+      ),
+    ),
+    'Active' = list(
+      description = 'Catalytic residues',
+      ranges = IRangesList(
+        'Y484' = IRanges(484)
+      )
+    )
+  ),
+  'Domains' = list(
+    'FAD-binding' = list(
+      desciption = 'FAD-binding domain',
+      ranges = IRanges::IRangesList(
+        coordinates = IRange(81, 219),
+        aligncoords = IRange(81, 217),
+      )
+    ),
+    'BBE-domain' = list(
+      description = 'Berberine bidge-like domain',
+      ranges = IRanges::IRangesList(
+        coordinates = IRange(480, 438),
+        aligncoords = IRange(480, 538),
+      )
+    )
+  ),
+  'Mutations' = list(
+    H92A = list(
+      desciption = 'No effect',
+      ranges = IRanges::IRangesList(
+        coodinates = IRanges::IRanges()
+      )
+    ),
+    R108A = list(
+      desciption = 'Strongly reduced catalytic activity',
+      ranges = IRanges::IRangesList(
+        coodinates = IRanges::IRanges()
+      )
+    ),
+    R110A = list(
+      desciption = 'Strongly reduced catalytic activity',
+      ranges = IRanges::IRangesList(
+        coodinates = IRanges::IRanges()
+      )
+    ),
+    H114A = list(
+      desciption = 'Loss of FAD binding and loss of catalytic activity. 2 Publications',
+      ranges = IRanges::IRangesList(
+        coodinates = IRanges::IRanges()
+      )
+    ),
+    H208A = list(
+      desciption = 'No effect',
+      ranges = IRanges::IRangesList(
+        coodinates = IRanges::IRanges()
+      )
+    ),
+    H292A = list(
+      desciption = 'Strongly reduced catalytic activity',
+      ranges = IRanges::IRangesList(
+        coodinates = IRanges::IRanges()
+      )
+    ),
+    Y417F = list(
+      desciption = 'Reduced catalytic activity',
+      ranges = IRanges::IRangesList(
+        coodinates = IRanges::IRanges()
+      )
+    ),
+    E442Q = list(
+      desciption = 'Slightly reduced catalytic activity',
+      ranges = IRanges::IRangesList(
+        coodinates = IRanges::IRanges()
+      )
+    ),
+    Y484F = list(
+      desciption = 'Loss of catalytic activity',
+      ranges = IRanges::IRangesList(
+        coodinates = IRanges::IRanges()
+      )
+    )
+  )
+)
+
+?Biostrings::IRangesList
+IRange(292)
+IRanges::IRanges(29)
