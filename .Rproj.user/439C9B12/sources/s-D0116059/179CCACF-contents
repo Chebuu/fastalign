@@ -2,21 +2,19 @@ library(Biostrings)
 library(sangerseqR)
 library(tools)
 
-CS_CODON_TABLE = getGeneticCode('14')
-
-findNonsense <- function(dnastring, genetic.code = getGeneticCode('14')){
+findNonsense <- function(dnastring, genetic.code=CANSAT_GENETIC_CODE){
   AA.seqs.split <- strsplit(
     as.character(
       translate(
-        dnastring, 
+        dnastring,
         genetic.code = genetic.code)
     ),
     split = ''
   )
   return(
     sapply(AA.seqs.split, function(AA.seq){
-      which(AA.seq == '*')  
-    })  
+      which(AA.seq == '*')
+    })
   )
 }
 
@@ -40,7 +38,7 @@ multiWritePairwiseAlignment <- function(alignment) {
   #     mmismatchSummary(alignment)
   #     nindel(alignment)
   #     indel(alignment)
-  #     alignedPattern(alignment) 
+  #     alignedPattern(alignment)
   #     alignedSubject(alignment)
 }
 

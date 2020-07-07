@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1594124273517.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "389832760",
+    "id" : "3F76ADA8",
+    "lastKnownWriteTime" : 1594124416,
+    "last_content_update" : 1594124416859,
+    "path" : "~/Desktop/PRJ/SATIV.AI/software/fastalign/R/sysdata.R",
+    "project_path" : "R/sysdata.R",
+    "properties" : {
+        "cursorPosition" : "100,8",
+        "scrollLine" : "78"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

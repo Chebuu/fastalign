@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1594124659696.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "179CCACF",
+    "lastKnownWriteTime" : 1594124728,
+    "last_content_update" : 1594124728353,
+    "path" : "~/Desktop/PRJ/SATIV.AI/software/fastalign/R/methods.R",
+    "project_path" : "R/methods.R",
+    "properties" : {
+        "cursorPosition" : "4,68",
+        "scrollLine" : "21"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

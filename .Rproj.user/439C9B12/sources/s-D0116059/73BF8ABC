@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1594123117059.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "73BF8ABC",
+    "lastKnownWriteTime" : 1594123515,
+    "last_content_update" : 1594123515666,
+    "path" : "~/Desktop/PRJ/SATIV.AI/software/fastalign/R/launchApp.R",
+    "project_path" : "R/launchApp.R",
+    "properties" : {
+        "cursorPosition" : "0,10",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

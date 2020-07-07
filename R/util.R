@@ -101,15 +101,16 @@ which.alphabet <- function(xstringset) {
   )
 }
 
+isOf <- function(class1, class2) {
+  any(sapply(as.list(class2), function(x) {
+    extends(class(class1), x)
+  }))
+}
+
 checkAndParseXStringSet <- function(xstringset){
   #' If xstringset is a file path or a character string, parse it as a BStringSet and coerce to the appropriate type (DNAStringSet, RNAStringSet, AAStringSet) depending on its contents.
   #' @param xstringset Either an XStringSet object or a character vector pointing to a .fasta file.
   #' @return An XStringSet or object.
-  isOf <- function(class1, class2) {
-    any(sapply(as.list(class2), function(x) {
-      extends(class(class1), x)
-    }))
-  }
   if(!isOf(xstringset, c('XStringSet', 'XString'))) {
     isFile <- tryCatch(file.exists(xstringset), error=function(e){F})
     bstringset <- ifelse(isFile, readBStringSet(xstringset), BStringSet(xstringset))

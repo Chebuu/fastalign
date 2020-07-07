@@ -121,15 +121,15 @@ checkAndParseXStringSet <- function(xstringset){
 }
 
 is.fasta <- function(fpath){
-  
+
 }
 
 is.fastq <- function(fpath){
-  
+
 }
 
 which.format <- function(fpath) {
-  
+
 }
 
 has.header <- function(fpath){

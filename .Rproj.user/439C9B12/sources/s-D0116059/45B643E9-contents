@@ -93,10 +93,3 @@ for(i in 1:length(GENETIC_CODE)) {
   CANSAT_GENETIC_CODE_NAMES[[i]] <- triplet
 }
 names(CANSAT_GENETIC_CODE) <- CANSAT_GENETIC_CODE_NAMES
-
-#' THCA Synthase annotations
-#' @format A list
-#' @source
-#'\code{fastalign::CANSAT_CODONS$TABLE$DNA}
-IRanges()
-IRangesList()
