@@ -35,7 +35,7 @@ Active site	 484 Proton acceptor
 292 H → A: "Strongly reduced catalytic activity"            
 417 Y → F: "Reduced catalytic activity"         
 442 E → Q: "Slightly reduced catalytic activity"            
-484 Y → F: "Loss of catalytic activity"  
+484 Y → F: "Loss of catalytic activity"         
 
 #### Molecule processing
 Signal peptide  1 – 28          
