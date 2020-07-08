@@ -1,8 +1,10 @@
 msa.mainPanel <- mainPanel(
   tabsetPanel(
+    id = 'msa',
     type = 'tabs',
     tabPanel(
       'Options',
+      id='tab.msa.options',
       flowLayout(
         class='options-flow',
         id='msa-options-flow-1',
@@ -36,6 +38,7 @@ msa.mainPanel <- mainPanel(
     ),
     tabPanel(
       'Results',
+      id='tab.msa.results',
       flowLayout(
         class='options-flow',
         id='options-flow-3',

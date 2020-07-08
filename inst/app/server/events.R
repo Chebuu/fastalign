@@ -35,7 +35,7 @@ DEFAULT_ARGS.qualitySubstitutionMatrices <- list(
 )
 
 DEFAULT_ARGS.errorSubstitutionMatrices <- list(
-  errorProbability = c(0,0,0,0), # This deault is likely incorrect
+  errorProbability = c(0,0,0,0),
   fuzzyMatch = c(0, 1),
   alphabetLength = 4L,
   bitScale = 1
@@ -93,13 +93,14 @@ DEFAULT_ARGS.errorSubstitutionMatrices <- list(
   return(args)
 }
 
-.parse.args.msa <- function(input) {
 
-}
 
 ################
 ## mpa events ##
 ################
+.parse.args.msa <- function(input) {
+  input
+}
 event.submit.mpa <- function(input, output) {
   observeEvent(
     input$button.submit.mpa,
@@ -149,21 +150,37 @@ event.select.define_substitution_matrix <- function(input, output) {
 ###########################
 ## ClustalW (msa) events ##
 ###########################
-event.submit.msa <- function(input, output) {
+.parse.args.msa <- function(input) {
+  input
+}
+event.submit.msa <- function(input, output, session) {
   observeEvent(
     input$button.submit.msa,
     {
       # Parse state
       args <- .parse.args.msa(input)
 
+      # Render loading spinner
       output$results.msa <- renderUI({
         tags$p('Please wait...')
       })
 
-      # Run alignment
+      # Set tab view
+      updateTabsetPanel(session, 'msa', selected='tab.msa.results')
+
+      # Render download button
+      output$download.msa <- renderUI({ actionButton('download.msa', 'Download') })
+
+      # # Run alignment
+      # results.alignment <- tryCatch(
+      #   runClustalW(args),
+      #   error = function(e) e
+      # )
+
+      # Run example alignment
       results.alignment <- tryCatch(
-        runClustalW(args),
-        error = function(e) e
+        runClustalW(thcasaa),
+        error = function(e) stop(e)
       )
 
       # # Generate pdf
@@ -171,16 +188,20 @@ event.submit.msa <- function(input, output) {
       #   parseClustalW.pdf(results.alignment),
       #   error = function(e) e
       # )
+      # Generate example pdf
+      results.render.pdf <- tryCatch(
+        'https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf',
+        error = function(e) e
+      )
 
-      # Set outputs
-      output$download.msa <- renderUI({ actionButton('download.msa', 'Download') })
+      # Render PDF view
       output$results.msa <- renderUI({
         tagList(
           tags$p('Results:'),
           tags$p(results.alignment),
           tags$iframe(
             style='height:400px; width:100%; scrolling=yes',
-            src='https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf'
+            src=results.render.pdf
           )
         )
       })

@@ -49,7 +49,7 @@ ui <- navbarPage(
   )
 )
 
-server <- function(input, output) {
+server <- function(input, output, session) {
   ####################
   ## Static outputs ##
   ####################
@@ -68,7 +68,7 @@ server <- function(input, output) {
   event.save.mpa(input, output)
   event.select.define_substitution_matrix(input, output)
   # msa
-  event.submit.msa(input, output)
+  event.submit.msa(input, output, session)
 }
 
 shinyApp(
