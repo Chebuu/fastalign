@@ -98,9 +98,6 @@ DEFAULT_ARGS.errorSubstitutionMatrices <- list(
 ################
 ## mpa events ##
 ################
-.parse.args.msa <- function(input) {
-  input
-}
 event.submit.mpa <- function(input, output) {
   observeEvent(
     input$button.submit.mpa,
@@ -178,6 +175,7 @@ event.submit.msa <- function(input, output, session) {
       # )
 
       # Run example alignment
+      print('Stating alignment')
       results.alignment <- tryCatch(
         runClustalW(thcasaa),
         error = function(e) stop(e)
