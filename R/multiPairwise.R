@@ -4,7 +4,7 @@ multiPairwise <- function(pattern, subject, ...){
   alignment <- pairwiseAlignment(pattern=pattern.XStringSet, subject=subject.XStringSet, ...)
   alignment@pattern@metadata$headers <- names(pattern)
   alignment@subject@metadata$headers <- names(subject)
-  return(alignment)
+  staggerAlignment(alignment)
 }
 
 
