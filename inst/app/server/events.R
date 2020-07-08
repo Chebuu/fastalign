@@ -183,27 +183,20 @@ event.submit.msa <- function(input, output, session) {
         error = function(e) stop(e)
       )
 
-      # # Generate pdf
-      # results.render.pdf <- tryCatch(
-      #   parseClustalW.pdf(results.alignment),
-      #   error = function(e) e
-      # )
-      # Generate example pdf
+      # Generate pdf
       results.render.pdf <- tryCatch(
-        'https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf',
+        parseClustalW.pdf(results.alignment),
         error = function(e) e
       )
 
-      # Render PDF view
+      # Render example PDF view
       output$results.msa <- renderUI({
-        tagList(
-          tags$p('Results:'),
-          tags$p(results.alignment),
-          tags$iframe(
-            style='height:400px; width:100%; scrolling=yes',
-            src=results.render.pdf
-          )
-        )
+        tags$p('Results:')
+        tags$p(results.alignment)
+        # tags$iframe(
+        #   style='height:400px; width:90vw; scrolling=yes',
+        #   src='https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf'
+        # )
       })
     }
   )
