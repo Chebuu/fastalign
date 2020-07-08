@@ -156,16 +156,34 @@ event.submit.msa <- function(input, output) {
       # Parse state
       args <- .parse.args.msa(input)
 
+      output$results.msa <- renderUI({
+        tags$p('Please wait...')
+      })
+
       # Run alignment
-      results <- tryCatch(
-        parseClustalW.pdf(runClustalW(args)),
+      results.alignment <- tryCatch(
+        runClustalW(args),
         error = function(e) e
       )
 
-      # Set outputs
-      output$results.mpa <- renderPrint({ results })
-      output$button.save <- renderUI({ actionButton('download.msa', 'Download') })
+      # # Generate pdf
+      # results.render.pdf <- tryCatch(
+      #   parseClustalW.pdf(results.alignment),
+      #   error = function(e) e
+      # )
 
+      # Set outputs
+      output$download.msa <- renderUI({ actionButton('download.msa', 'Download') })
+      output$results.msa <- renderUI({
+        tagList(
+          tags$p('Results:'),
+          tags$p(results.alignment),
+          tags$iframe(
+            style='height:400px; width:100%; scrolling=yes',
+            src='https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf'
+          )
+        )
+      })
     }
   )
 }

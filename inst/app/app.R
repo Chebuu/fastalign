@@ -34,45 +34,41 @@ ui <- navbarPage(
   title = 'TITLE',
   theme = 'css/style.css',
   tabPanel(
-    'Multi-pairwise Alignment',
+    'Multiple Alignment (Biostrings)',
     sidebarLayout(
       mpa.sidebarPanel,
       mpa.mainPanel
     )
   ),
-  # tabPanel(
-  #   'Sanger Seq',
-  #   fluidRow(
-  #     sanger.sidebarPanel,
-  #     sanger.mainPanel
-  #   )
-  # ),
   tabPanel(
     'ClustalW (msa)',
     sidebarLayout(
       msa.sidebarPanel,
       msa.mainPanel
     )
-  ),
-  tabPanel(
-    'Utilities',
-    mainPanel(
-      # TODO::
-    )
   )
 )
 
 server <- function(input, output) {
-  # Static outputs
+  ####################
+  ## Static outputs ##
+  ####################
+  # mpa
   output$results.mpa <- STATIC.results.mpa
   output$button.save <- STATIC.button.save
+  # msa
+  output$results.msa <- STATIC.results.msa
+  output$download.msa <- STATIC.download.msa
 
-  # Event handlers
+  ##############@@@@@@
+  ## Event handlers @@
+  ##############@@@@@@
+  # mpa
   event.submit.mpa(input, output)
   event.save.mpa(input, output)
-
   event.select.define_substitution_matrix(input, output)
-
+  # msa
+  event.submit.msa(input, output)
 }
 
 shinyApp(

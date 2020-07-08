@@ -36,8 +36,18 @@ msa.mainPanel <- mainPanel(
     ),
     tabPanel(
       'Results',
-      uiOutput('results.msa'),
-      uiOutput('download.msa')
+      flowLayout(
+        class='options-flow',
+        id='options-flow-3',
+        column(
+          12,
+          uiOutput('download.msa')
+        ),
+        column(
+          12,
+          uiOutput('results.msa')
+        )
+      )
     )
   )
 )

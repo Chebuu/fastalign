@@ -1,6 +1,9 @@
 # TODO::
 # - This is a UI file and should be moved to App/ui/
 
+#########
+## mpa ##
+#########
 STATIC.results.mpa <- renderText({'TODO: Instructions for user here.'})
 STATIC.button.save <- renderUI({ span() })
 
@@ -37,3 +40,9 @@ STATIC.submat.selection <- list(
   }),
   none = renderUI({ span() })
 )
+
+#########
+## msa ##
+#########
+STATIC.results.msa <- renderText({'TODO: Instructions for user here.'})
+STATIC.download.msa <- renderUI({ span() })
