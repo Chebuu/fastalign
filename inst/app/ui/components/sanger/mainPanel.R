@@ -1,10 +1,8 @@
-# TODO::
-# - Would be much better to simply link to and instance of the PolyPeakParser() app
 sanger.mainPanel <- mainPanel(
   tabsetPanel(
     type = 'tabs',
     tabPanel(
-      'Options', 
+      'Options',
       flowLayout(
         class='options-flow',
         id='basecalls-options-flow-1',
@@ -66,7 +64,7 @@ sanger.mainPanel <- mainPanel(
                 12,
                 class='submat-select-tab-child',
                 selectInput('select.substitution_matrix', 'Substitution Matrix', choices=c('None'=NULL, 'BLOSUM45', 'BLOSUM50', 'BLOSUM62', 'BLOSUM80', 'BLOSUM100', 'PAM30', 'PAM40', 'PAM70', 'PAM120', 'PAM250'))
-              )  
+              )
             )
           ),
           tabPanel(
@@ -75,7 +73,7 @@ sanger.mainPanel <- mainPanel(
               column(
                 12,
                 class='submat-select-tab-child',
-                selectInput('select.define_substitution_matrix', 'Define Substitution Matrix', choices=c('None'=NULL, 'Nucleotide'='nucleotideSubstitutionMatrix', 'Quality'='qualitySubstitutionMatrix', 'Error'='errorSubstitutionMatrix'))  
+                selectInput('select.define_substitution_matrix', 'Define Substitution Matrix', choices=c('None'=NULL, 'Nucleotide'='nucleotideSubstitutionMatrix', 'Quality'='qualitySubstitutionMatrix', 'Error'='errorSubstitutionMatrix'))
               )
             ),
             # Biostrings::substitution.matrices
@@ -97,7 +95,7 @@ sanger.mainPanel <- mainPanel(
       )
     ),
     tabPanel(
-      'Results', 
+      'Results',
       uiOutput('results.mpa'),
       uiOutput('save.mpa')
     )

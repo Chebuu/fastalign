@@ -4,8 +4,7 @@ runClustalW <- function(xstringset) {
   msa::msa(checkAndParseXStringSet(xstringset))
 }
 
-parseClustalW <- function(alignment) {
-  prettyPrint <- msaPrettyPrint(alignment, output='asis')
-  stop('TODO')
+parseClustalW.pdf <- function(alignment) {
+  msa::msaPrettyPrint(alignment, output='pdf')
 }
 
