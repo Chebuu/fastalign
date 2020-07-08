@@ -24,7 +24,6 @@ msa.mainPanel <- mainPanel(
         class='options-flow',
         id='options-flow-2',
         column(
-          # sangerseqR::chromatogram
           12,
           checkboxInput('check.box.1', 'checkbox.1'),
           br(),
