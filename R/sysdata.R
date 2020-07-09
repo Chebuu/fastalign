@@ -374,18 +374,18 @@ KINETICS_Q8GTB6 <- list(
   Kcat = list(
     CBGA = list(
       value = '0.30',
-      units = '1/sec'
+      units = '1/sec',
       label = 'Kcat[CBGA] = 0.30 sec(-1)',
-      description = 'Kcat value for CBGA substrate 0.30 sec(-1)'
+      description = 'Kcat value for CBGA substrate 0.30 sec(-1)',
       references = c(NULL)
     )
   ),
   Km = list(
     CBGA = list(
       value = c('134', '254'),
-      units = 'µM'
+      units = 'µM',
       label = 'Km[CBGA] = (134 µM, 254 µM)',
-      description = 'Km values for CBGA (134 µM, 254 µM)'
+      description = 'Km values for CBGA (134 µM, 254 µM)',
       references = c(
         'https://doi.org/10.1074/jbc.M403693200',
         'https://doi.org/10.1021/ja00143a024'
