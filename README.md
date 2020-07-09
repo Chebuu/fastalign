@@ -27,9 +27,11 @@ vignette("Manuscript", "fastalign")
 ## Annotations
 ### Q8GTB6 
 #### Features
-Binding site 292 Substrate
-Binding site 417 Substrate
-Active site	 484 Proton acceptor
+Binding site 292 (Substrate)
+
+Binding site 417 (Substrate)
+
+Active site	 484 (Proton acceptor)
 
 #### Mutagenesis
 92  H → A: "No effect"          
