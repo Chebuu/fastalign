@@ -1,3 +1,6 @@
+message('Starting shiny server: inst/app/app.R')
+message('Please wait...')
+
 library(shiny)
 library(R.utils)
 

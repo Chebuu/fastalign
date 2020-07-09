@@ -16,4 +16,3 @@ install.packages("fastalign")
 library(fastalign)
 
 ```
-

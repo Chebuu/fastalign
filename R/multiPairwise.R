@@ -7,7 +7,6 @@ multiPairwise <- function(pattern, subject, ...){
   staggerAlignment(alignment)
 }
 
-
 parseMultiPairwise <- function(alignment) {
   stop('TODO')
   # lapply(alignment, function(a){

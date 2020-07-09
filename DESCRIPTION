@@ -16,3 +16,14 @@ Suggests:
 VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)
+biocViews:
+Imports: 
+    shiny,
+    R.utils,
+    Biostrings,
+    DECIPHER,
+    sangerseqR,
+    tools,
+    msa,
+    ggmsa,
+    stringr
