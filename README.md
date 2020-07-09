@@ -6,13 +6,13 @@
 
 A (slow) sequence alignment-themed R package + shiny GUI.
 
-## Installation
+### Installation
 ``` r
-install.packages("fastalign")
+devtools::install_github("chebuu/fastalign")
 ```
 
-## Loading the library
-``` r
+### Shiny app
+```r
 library(fastalign)
-
+fastalign::launchApp()
 ```
