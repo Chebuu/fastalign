@@ -1,5 +1,21 @@
+.ignore
 inst/doc
 
 .Rproj.user
 
 R/.fiddle.R
+
+R/decipher.R
+R/annotateCann*.R
+R/entrezutil.R
+R/gatkutil.R
+R/popStRat.R
+R/readsim.R
+R/rnaStructure.R
+R/sambamutil.R
+R/sangerutil.R
+R/snpOntologies.R
+R/srautil.R
+R/traSNP.R
+R/tripletPermutations.R
+R/UniProtSPARQL.R

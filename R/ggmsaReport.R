@@ -1,3 +1,5 @@
-library(ggmsa)
+ggmsaReport <- function() {
+  #' @title <TITLE>
+}
 
 

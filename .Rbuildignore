@@ -1,4 +1,10 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 
+.ignore
+
+./alignment.pdf
+./alignment.tex
+
 R/.fiddle.R
+^LICENSE\.md$

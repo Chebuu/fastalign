@@ -6,11 +6,12 @@ Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: CC0
 Encoding: UTF-8
 LazyData: true
 Suggests: 
     testthat,
+    assertthat,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
@@ -19,11 +20,15 @@ Depends:
 biocViews:
 Imports: 
     shiny,
+    tools,
     R.utils,
+    SPARQL,
+    stringr,
+    UniprotR,
+    ggmsa,
     Biostrings,
+    GenomicRanges,
     DECIPHER,
     sangerseqR,
-    tools,
-    msa,
-    ggmsa,
-    stringr
+    ggbio,
+    msa
